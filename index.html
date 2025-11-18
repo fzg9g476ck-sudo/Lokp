@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Halyk Global Markets - 5 Жылдық Шолу</title>
+   <!-- Tailwind CSS -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <!-- Chart.js -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <!-- Inter Font -->
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+   
+   <style>
+       body {
+           font-family: 'Inter', sans-serif;
+           scroll-behavior: smooth;
+       }
+       /* Корпоративті түстерді анықтау */
+       .halyk-green {
+           color: #00A14B; /* Halyk-тың негізгі жасыл түсі */
+       }
+       .bg-halyk-green {
+           background-color: #00A14B;
+       }
+       .halyk-deep-blue {
+           color: #003366;
+       }
+       .bg-halyk-deep-blue {
+           background-color: #003366;
+       }
+       
+       /* Слайд стилі */
+       .slide {
+           min-height: 100vh;
+           padding: 4rem 2rem;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           border-bottom: 1px solid #e2e8f0;
+       }
+       .dark .slide {
+           border-bottom-color: #374151;
+       }
+       
+       /* Анимация */
+       .fade-in {
+           animation: fadeIn 1s ease-in-out;
+       }
+       @keyframes fadeIn {
+           from { opacity: 0; transform: translateY(20px); }
+           to { opacity: 1; transform: translateY(0); }
+       }
+   </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200 transition-colors duration-300">
+
+   <!-- Навигация (қарапайым) -->
+   <nav class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+       <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+           <div class="text-xl font-bold halyk-green">
+               Halyk Global Markets
+           </div>
+           <div class="hidden md:flex space-x-4">
+               <a href="#slide-1" class="text-gray-600 dark:text-gray-300 hover:text-halyk-green">Басты бет</a>
+               <a href="#slide-4" class="text-gray-600 dark:text-gray-300 hover:text-halyk-green">Көрсеткіштер</a>
+               <a href="#slide-5" class="text-gray-600 dark:text-gray-300 hover:text-halyk-green">Активтер</a>
+               <a href="#slide-6" class="text-gray-600 dark:text-gray-300 hover:text-halyk-green">Нәтижелер</a>
+               <a href="#slide-7" class="text-gray-600 dark:text-gray-300 hover:text-halyk-green">Дивидендтер</a>
+               <a href="#slide-8" class="text-gray-600 dark:text-gray-300 hover:text-halyk-green">Қорытынды</a>
+           </div>
+       </div>
+   </nav>
+
+   <!-- Слайд 1: Титул беті -->
+   <section id="slide-1" class="slide bg-halyk-deep-blue text-white text-center fade-in">
+       <div class="max-w-4xl">
+           <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-pulse">"Halyk Global Markets" АҚ</h1>
+           <h2 class="text-2xl md:text-3xl font-light mb-6">5 ЖЫЛДЫҚ ҚАРЖЫЛЫҚ ШОЛУ</h2>
+           <p class="text-lg md:text-xl text-gray-300 mb-8">(2020-2024)</p>
+           <p class="text-sm text-gray-400">Ұсынылған қаржылық есептілік негізінде дайындалған</p>
+           <div class="mt-12 text-gray-300 animate-bounce">
+               <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+           </div>
+       </div>
+   </section>
+
+   <!-- Слайд 2: Компания туралы -->
+   <section id="slide-2" class="slide bg-white dark:bg-gray-800 fade-in">
+       <div class="container mx-auto max-w-5xl text-center">
+           <h2 class="text-3xl font-bold mb-12 halyk-green">Компания туралы қысқаша мәлімет</h2>
+           <div class="grid md:grid-cols-2 gap-8 text-left">
+               <!-- Блок 1: Құрылуы және Иелік -->
+               <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-xl shadow-lg transition-transform transform hover:scale-105">
+                   <div class="flex items-center mb-4">
+                       <svg class="w-10 h-10 text-halyk-green mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                       <h3 class="text-xl font-bold halyk-deep-blue dark:text-gray-100">Құрылуы және Иелік</h3>
+                   </div>
+                   <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                       <li>1997 жылдан бастап қызмет етеді.</li>
+                       <li>2020 ж. "Казкоммерц Секьюритиз" АҚ атауы "Halyk Global Markets" АҚ болып өзгертілді.</li>
+                       <li>"Қазақстан Халық Банкі" АҚ-ның 100% еншілес ұйымы.</li>
+                   </ul>
+               </div>
+               <!-- Блок 2: Негізгі қызметі -->
+               <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-xl shadow-lg transition-transform transform hover:scale-105">
+                   <div class="flex items-center mb-4">
+                       <svg class="w-10 h-10 text-halyk-green mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                       <h3 class="text-xl font-bold halyk-deep-blue dark:text-gray-100">Негізгі қызметі және Лицензия</h3>
+                   </div>
+                   <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                       <li>Бағалы қағаздар нарығында брокерлік және дилерлік операциялар.</li>
+                       <li>ҚР Қаржы нарығын реттеу және дамыту агенттігінің (АРРФР) лицензиясы негізінде жұмыс істейді.</li>
+                       <li>Лицензия № 3.2.236/13 (15 шілде 2020 ж.).</li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Слайд 3: Аудиторлық Қорытынды -->
+   <section id="slide-3" class="slide bg-gray-200 dark:bg-gray-900 fade-in">
+       <div class="container mx-auto max-w-5xl text-center">
+           <h2 class="text-3xl font-bold mb-12 halyk-green">Тәуелсіз Аудитордың Қорытындысы</h2>
+           
+           <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl mb-8">
+               <blockquote class="text-lg md:text-xl italic text-gray-700 dark:text-gray-300 border-l-4 border-halyk-green pl-6">
+                   "Қаржылық есептілік "Halyk Global Markets" АҚ-ның қаржылық жағдайын, қызметінің қаржылық нәтижелерін және ақша қаражатының қозғалысын барлық елеулі аспектілерде <span class="font-bold text-halyk-green">анық көрсетеді</span>."
+               </blockquote>
+           </div>
+
+           <div class="grid md:grid-cols-2 gap-8 text-left">
+               <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg flex items-center">
+                   <svg class="w-12 h-12 text-halyk-green mr-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                   <div>
+                       <h4 class="text-lg font-semibold text-gray-600 dark:text-gray-400">Аудитор (2020-2024 жж.):</h4>
+                       <p class="text-2xl font-bold text-halyk-deep-blue dark:text-gray-100">"Делойт" ЖШС (Deloitte)</p>
+                   </div>
+               </div>
+               <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg flex items-center">
+                   <svg class="w-12 h-12 text-halyk-green mr-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                   <div>
+                       <h4 class="text-lg font-semibold text-gray-600 dark:text-gray-400">Сәйкестік:</h4>
+                       <p class="text-2xl font-bold text-halyk-deep-blue dark:text-gray-100">ХҚЕС (IFRS)</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Слайд 4: Негізгі Қаржылық Көрсеткіштер (Кесте) -->
+   <section id="slide-4" class="slide bg-white dark:bg-gray-800 fade-in">
+       <div class="container mx-auto max-w-6xl text-center">
+           <h2 class="text-3xl font-bold mb-6 halyk-green">5 Жылдық Негізгі Қаржылық Көрсеткіштер</h2>
+           <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">(Барлық сомалар мың теңгемен көрсетілген)</p>
+           
+           <div class="shadow-2xl rounded-xl overflow-hidden">
+               <div class="overflow-x-auto">
+                   <table class="w-full text-sm md:text-base text-left text-gray-700 dark:text-gray-300">
+                       <thead class="text-xs text-gray-800 dark:text-gray-100 uppercase bg-gray-200 dark:bg-gray-700">
+                           <tr>
+                               <th scope="col" class="py-4 px-6">Көрсеткіш</th>
+                               <th scope="col" class="py-4 px-6 text-right">2020</th>
+                               <th scope="col" class="py-4 px-6 text-right">2021</th>
+                               <th scope="col" class="py-4 px-6 text-right">2022</th>
+                               <th scope="col" class="py-4 px-6 text-right">2023</th>
+                               <th scope="col" class="py-4 px-6 text-right">2024</th>
+                           </tr>
+                       </thead>
+                       <tbody class="bg-white dark:bg-gray-800">
+                           <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                               <td class="py-4 px-6 font-medium">Жалпы Активтер</td>
+                               <td class="py-4 px-6 text-right">20,945,263</td>
+                               <td class="py-4 px-6 text-right">28,030,733</td>
+                               <td class="py-4 px-6 text-right">20,548,198</td>
+                               <td class="py-4 px-6 text-right">17,421,217</td>
+                               <td class="py-4 px-6 text-right">11,592,632</td>
+                           </tr>
+                           <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                               <td class="py-4 px-6 font-medium">Жалпы Міндеттемелер</td>
+                               <td class="py-4 px-6 text-right">1,897,104</td>
+                               <td class="py-4 px-6 text-right">7,116,568</td>
+                               <td class="py-4 px-6 text-right">17,683</td>
+                               <td class="py-4 px-6 text-right">177,586</td>
+                               <td class="py-4 px-6 text-right">21,101</td>
+                           </tr>
+                           <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                               <td class="py-4 px-6 font-medium">Меншікті Капитал</td>
+                               <td class="py-4 px-6 text-right">19,048,159</td>
+                               <td class="py-4 px-6 text-right">20,914,165</td>
+                               <td class="py-4 px-6 text-right">20,530,515</td>
+                               <td class="py-4 px-6 text-right">17,243,631</td>
+                               <td class="py-4 px-6 text-right">11,571,531</td>
+                           </tr>
+                           <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                               <td class="py-4 px-6 font-medium">Операциялық Кірістер</td>
+                               <td class="py-4 px-6 text-right">1,499,441</td>
+                               <td class="py-4 px-6 text-right">3,726,054</td>
+                               <td class="py-4 px-6 text-right">564,939</td>
+                               <td class="py-4 px-6 text-right">3,109,078</td>
+                               <td class="py-4 px-6 text-right">1,512,612</td>
+                           </tr>
+                           <tr class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                               <td class="py-4 px-6 font-medium">Операциялық Шығыстар</td>
+                               <td class="py-4 px-6 text-right">(525,959)</td>
+                               <td class="py-4 px-6 text-right">(954,189)</td>
+                               <td class="py-4 px-6 text-right">(409,620)</td>
+                               <td class="py-4 px-6 text-right">(343,809)</td>
+                               <td class="py-4 px-6 text-right">(181,815)</td>
+                           </tr>
+                           <tr class="bg-gray-100 dark:bg-gray-900 font-bold">
+                               <td class="py-5 px-6">Таза Пайда / (Шығын)</td>
+                               <td class="py-5 px-6 text-right text-green-600 dark:text-green-400">1,877,971</td>
+                               <td class="py-5 px-6 text-right text-green-600 dark:text-green-400">2,977,236</td>
+                               <td class="py-5 px-6 text-right text-red-600 dark:text-red-400">(239,739)</td>
+                               <td class="py-5 px-6 text-right text-green-600 dark:text-green-400">2,633,840</td>
+                               <td class="py-5 px-6 text-right text-green-600 dark:text-green-400">1,412,427</td>
+                           </tr>
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Слайд 5: Қаржылық Жағдай Динамикасы (График) -->
+   <section id="slide-5" class="slide bg-gray-200 dark:bg-gray-900 fade-in">
+       <div class="container mx-auto max-w-5xl">
+           <h2 class="text-3xl font-bold text-center mb-8 halyk-green">Қаржылық Жағдай Динамикасы</h2>
+           <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-2xl mb-8">
+               <canvas id="financialPositionChart"></canvas>
+           </div>
+           <div class="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
+               <h3 class="text-2xl font-bold mb-4 halyk-deep-blue dark:text-gray-100">Негізгі трендтер:</h3>
+               <ul class="list-none space-y-3">
+                   <li class="flex items-start">
+                       <svg class="w-6 h-6 text-halyk-green mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                       <span><strong class="text-gray-900 dark:text-white">Активтер:</strong> 2021 жылы 28 млрд теңгеге дейін өсіп, шарықтау шегіне жетті. 2022 жылдан бастап активтер көлемі оңтайландырылып, 2024 ж. 11.6 млрд теңгені құрады.</span>
+                   </li>
+                   <li class="flex items-start">
+                       <svg class="w-6 h-6 text-halyk-green mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                       <span><strong class="text-gray-900 dark:text-white">Міндеттемелер:</strong> 2022 жылы міндеттемелер күрт азайды (7.1 млрд-тан 17.7 млн-ға дейін). Бұл компанияның қаржылық тұрақтылығының артқанын және тәуекелдердің төмендегенін көрсетеді.</span>
+                   </li>
+                   <li class="flex items-start">
+                       <svg class="w-6 h-6 text-halyk-green mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                       <span><strong class="text-gray-900 dark:text-white">Капитал:</strong> 2023-2024 жылдардағы төмендеу негізінен акционерге ірі көлемде дивидендтер төлеумен байланысты болды.</span>
+                   </li>
+               </ul>
+           </div>
+       </div>
+   </section>
+
+   <!-- Слайд 6: Қызмет Нәтижелері (График) -->
+   <section id="slide-6" class="slide bg-white dark:bg-gray-800 fade-in">
+       <div class="container mx-auto max-w-5xl">
+           <h2 class="text-3xl font-bold text-center mb-8 halyk-green">Қызмет Нәтижелерінің Динамикасы</h2>
+           <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-2xl mb-8">
+               <canvas id="performanceChart"></canvas>
+           </div>
+           <div class="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
+               <h3 class="text-2xl font-bold mb-4 halyk-deep-blue dark:text-gray-100">Нәтижелер талдауы:</h3>
+               <ul class="list-none space-y-3">
+                   <li class="flex items-start">
+                       <svg class="w-6 h-6 text-halyk-green mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                       <span><strong class="text-gray-900 dark:text-white">Пайдалылық:</strong> Компания 5 жылдық кезеңнің 4 жылын айтарлықтай пайдамен аяқтады (2021 ж. - 2.98 млрд, 2023 ж. - 2.63 млрд).</span>
+                   </li>
+                   <li class="flex items-start">
+                       <svg class="w-6 h-6 text-red-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                       <span><strong class="text-gray-900 dark:text-white">2022 жылғы шығын:</strong> 2022 жылы ~240 млн теңге таза шығын тіркелді, бұл операциялық кірістердің төмендеуімен байланысты болды.</span>
+                   </li>
+                   <li class="flex items-start">
+                       <svg class="w-6 h-6 text-halyk-green mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                       <span><strong class="text-gray-900 dark:text-white">Қалпына келу:</strong> Компания 2023 жылы операциялық кірістерді 3.1 млрд теңгеге дейін қалпына келтіріп, жоғары пайдалылыққа қайта оралды.</span>
+                   </li>
+               </ul>
+           </div>
+       </div>
+   </section>
+
+   <!-- Слайд 7: Дивидендтік Төлемдер (График) -->
+   <section id="slide-7" class="slide bg-gray-200 dark:bg-gray-900 fade-in">
+       <div class="container mx-auto max-w-5xl">
+           <h2 class="text-3xl font-bold text-center mb-8 halyk-green">Дивидендтік Төлемдер (Акционерге)</h2>
+           <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-2xl mb-8">
+               <canvas id="dividendChart"></canvas>
+           </div>
+           
+           <div class="text-center bg-halyk-green text-white p-6 rounded-xl shadow-lg max-w-md mx-auto mb-8">
+               <h4 class="text-lg font-semibold text-gray-200">5 ЖЫЛ ІШІНДЕ ЖАЛПЫ ТӨЛЕНДІ:</h4>
+               <p class="text-4xl font-bold">15,5 МЛРД ₸</p>
+               <span class="text-sm text-gray-100">(15,526,742 мың теңге)</span>
+           </div>
+
+           <div class="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
+               <h3 class="text-2xl font-bold mb-4 halyk-deep-blue dark:text-gray-100">Талдау:</h3>
+               <p>Компания 2023-2024 жылдары дивидендтік төлемдерді күрт ұлғайтты (6 млрд және 7.1 млрд теңге), бұл оның жоғары операциялық тиімділігін және акционер ("Halyk Bank") үшін тұрақты табыс көзін құру қабілетін көрсетеді.</p>
+           </div>
+       </div>
+   </section>
+
+   <!-- Слайд 8: 5 Жылдық Қорытынды -->
+   <section id="slide-8" class="slide bg-white dark:bg-gray-800 fade-in">
+       <div class="container mx-auto max-w-6xl text-center">
+           <h2 class="text-3xl font-bold mb-12 halyk-green">5 Жылдық Жалпы Қорытынды</h2>
+           <div class="grid md:grid-cols-3 gap-8">
+               <!-- Қорытынды 1 -->
+               <div class="bg-gray-100 dark:bg-gray-700 p-8 rounded-xl shadow-lg">
+                   <svg class="w-16 h-16 text-halyk-green mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                   <h3 class="text-2xl font-bold mb-3 halyk-deep-blue dark:text-gray-100">Жоғары Капиталдану</h3>
+                   <p class="text-gray-700 dark:text-gray-300">Міндеттемелердің 2022 жылдан бастап күрт төмендеуі компанияның қаржылық тұрақтылығын едәуір нығайтты.</p>
+               </div>
+               <!-- Қорытынды 2 -->
+               <div class="bg-gray-100 dark:bg-gray-700 p-8 rounded-xl shadow-lg">
+                   <svg class="w-16 h-16 text-halyk-green mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                   <h3 class="text-2xl font-bold mb-3 halyk-deep-blue dark:text-gray-100">Тиімді Қызмет</h3>
+                   <p class="text-gray-700 dark:text-gray-300">2022 жылғы нарықтық құбылмалылыққа қарамастан, компания 5 жылдың 4-інде тұрақты пайда тауып, шығындарды тиімді басқарды.</p>
+               </div>
+               <!-- Қорытынды 3 -->
+               <div class="bg-gray-100 dark:bg-gray-700 p-8 rounded-xl shadow-lg">
+                   <svg class="w-16 h-16 text-halyk-green mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2zM0 14s5.333-2 12-2 12 2 12 2v2H0v-2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.212c-2.23.13-4.204.634-5.886 1.493a.5.5 0 00-.22 0A10.02 10.02 0 001 10c0 4.09 2.503 7.617 6.07 9.176a.5.5 0 00.18.012c.11.003.22.003.333.003.112 0 .223 0 .333-.003a.5.5 0 00.18-.012A10.02 10.02 0 0017 19.006a10.02 10.02 0 005.106-3.32.5.5 0 000-.22C21.396 14.204 19.42 12 17 12c-2.42 0-4.396 2.204-5.886 3.493a.5.5 0 01-.228 0C9.396 14.204 7.42 12 5 12c-2.42 0-4.396 2.204-5.886 3.493a.5.5 0 01-.228 0A10.02 10.02 0 011 10c0-2.31.78-4.49 2.114-6.22a.5.5 0 010-.22C4.604 2.204 6.58 0 9 0c2.42 0 4.396 2.204 5.886 3.493a.5.5 0 00.228 0C16.604 2.204 18.58 0 21 0c2.42 0 4.396 2.204 5.886 3.493a.5.5 0 00.228 0A10.02 10.02 0 0123 10c0 .354-.02.705-.058 1.05a.5.5 0 01-.04.162"></path></svg>
+                   <h3 class="text-2xl font-bold mb-3 halyk-deep-blue dark:text-gray-100">Акционерлер үшін Құндылық</h3>
+                   <p class="text-gray-700 dark:text-gray-300">5 жыл ішінде "Halyk Bank" АҚ-ға 15,5 миллиард теңгеден астам дивиденд төленді, бұл жоғары кірістілікті көрсетеді.</p>
+               </div>
+           </div>
+           <div class="mt-12 max-w-4xl mx-auto">
+               <div class="bg-blue-100 dark:bg-halyk-deep-blue text-halyk-deep-blue dark:text-gray-100 p-8 rounded-xl shadow-xl">
+                   <h3 class="text-2xl font-bold mb-3">Жалпы тұжырым</h3>
+                   <p class="text-lg">"Halyk Global Markets" АҚ 5 жылдық кезеңде өзінің қаржылық тұрақтылығын, нарық өзгерістеріне бейімделу қабілетін және акционер үшін жоғары құндылықты қамтамасыз ете алатынын дәлелдеді.</p>
+               </div>
+           </div>
+       </div>
+   </section>
+
+   <!-- Слайд 9: Соңғы бет -->
+   <section id="slide-9" class="slide bg-halyk-deep-blue text-white text-center fade-in">
+       <h1 class="text-4xl md:text-5xl font-bold mb-6">Назарларыңызға рахмет!</h1>
+       <p class="text-gray-400 text-sm max-w-2xl">
+           Бұл презентация тек ақпараттық мақсатта ұсынылған және "Halyk Global Markets" АҚ-ның 2020-2024 жылдардағы жылдық аудиттелген қаржылық есептілігіне негізделген.
+       </p>
+   </section>
+
+   <script>
+       // --- Chart.js Графиктерді баптау ---
+
+       // Қараңғы режимді тексеру және мәтін түсін орнату
+       function getChartTextColor() {
+           if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+               return '#e5e7eb'; // Dark mode text color (gray-200)
+           }
+           return '#374151'; // Light mode text color (gray-700)
+       }
+       
+       const chartTextColor = getChartTextColor();
+
+       // Жалпы баптаулар
+       Chart.defaults.font.family = "'Inter', sans-serif";
+       Chart.defaults.color = chartTextColor;
+       Chart.defaults.borderColor = 'rgba(55, 65, 81, 0.1)'; // dark:bg-gray-700 border
+       
+       // Теңгені миллионға айналдыру функциясы
+       function formatMillions(value) {
+           return (value / 1000000).toFixed(1) + ' млрд ₸';
+       }
+       
+       // --- График 1: Қаржылық Жағдай (Слайд 5) ---
+       const ctxPosition = document.getElementById('financialPositionChart').getContext('2d');
+       new Chart(ctxPosition, {
+           type: 'bar',
+           data: {
+               labels: ['2020', '2021', '2022', '2023', '2024'],
+               datasets: [
+                   {
+                       label: 'Жалпы Активтер',
+                       data: [20945263, 28030733, 20548198, 17421217, 11592632],
+                       backgroundColor: '#003366', // halyk-deep-blue
+                       borderColor: '#002244',
+                       borderWidth: 1
+                   },
+                   {
+                       label: 'Меншікті Капитал',
+                       data: [19048159, 20914165, 20530515, 17243631, 11571531],
+                       backgroundColor: '#00A14B', // halyk-green
+                       borderColor: '#007a3a',
+                       borderWidth: 1
+                   }
+               ]
+           },
+           options: {
+               responsive: true,
+               plugins: {
+                   title: { display: true, text: 'Активтер мен Капитал Динамикасы (мың ₸)', padding: { bottom: 20 }, font: { size: 16 } },
+                   tooltip: {
+                       callbacks: {
+                           label: function(context) {
+                               return context.dataset.label + ': ' + new Intl.NumberFormat('kk-KZ').format(context.raw) + ' мың ₸';
+                           }
+                       }
+                   }
+               },
+               scales: {
+                   y: {
+                       beginAtZero: true,
+                       ticks: {
+                           color: chartTextColor,
+                           callback: function(value) {
+                               return (value / 1000000) + ' M';
+                           }
+                       },
+                       grid: { color: 'rgba(156, 163, 175, 0.2)' }
+                   },
+                   x: {
+                       ticks: { color: chartTextColor },
+                       grid: { display: false }
+                   }
+               }
+           }
+       });
+
+       // --- График 2: Қызмет Нәтижелері (Слайд 6) ---
+       const ctxPerformance = document.getElementById('performanceChart').getContext('2d');
+       new Chart(ctxPerformance, {
+           type: 'line',
+           data: {
+               labels: ['2020', '2021', '2022', '2023', '2024'],
+               datasets: [
+                   {
+                       label: 'Операциялық Кірістер',
+                       data: [1499441, 3726054, 564939, 3109078, 1512612],
+                       borderColor: '#003366', // halyk-deep-blue
+                       backgroundColor: 'rgba(0, 51, 102, 0.1)',
+                       fill: true,
+                       tension: 0.3
+                   },
+                   {
+                       label: 'Таза Пайда / (Шығын)',
+                       data: [1877971, 2977236, -239739, 2633840, 1412427],
+                       borderColor: '#00A14B', // halyk-green
+                       backgroundColor: 'rgba(0, 161, 75, 0.1)',
+                       fill: true,
+                       tension: 0.3
+                   }
+               ]
+           },
+           options: {
+               responsive: true,
+               plugins: {
+                   title: { display: true, text: 'Кірістер мен Пайда Динамикасы (мың ₸)', padding: { bottom: 20 }, font: { size: 16 } },
+                   tooltip: {
+                       callbacks: {
+                           label: function(context) {
+                               return context.dataset.label + ': ' + new Intl.NumberFormat('kk-KZ').format(context.raw) + ' мың ₸';
+                           }
+                       }
+                   }
+               },
+               scales: {
+                   y: {
+                       ticks: {
+                           color: chartTextColor,
+                           callback: function(value) {
+                               return (value / 1000000) + ' M';
+                           }
+                       },
+                       grid: { color: 'rgba(156, 163, 175, 0.2)' }
+                   },
+                   x: {
+                       ticks: { color: chartTextColor },
+                       grid: { display: false }
+                   }
+               }
+           }
+       });
+
+       // --- График 3: Дивидендтер (Слайд 7) ---
+       const ctxDividends = document.getElementById('dividendChart').getContext('2d');
+       new Chart(ctxDividends, {
+           type: 'bar',
+           data: {
+               labels: ['2020', '2021', '2022', '2023', '2024'],
+               datasets: [
+                   {
+                       label: 'Төленген дивидендтер',
+                       data: [1299635, 1127037, 0, 6000014, 7100056],
+                       backgroundColor: '#00A14B',
+                       borderColor: '#007a3a',
+                       borderWidth: 1,
+                       borderRadius: 5
+                   }
+               ]
+           },
+           options: {
+               responsive: true,
+               plugins: {
+                   title: { display: true, text: 'Жылдар бойынша төленген дивидендтер (мың ₸)', padding: { bottom: 20 }, font: { size: 16 } },
+                   legend: { display: false },
+                   tooltip: {
+                       callbacks: {
+                           label: function(context) {
+                               return context.dataset.label + ': ' + new Intl.NumberFormat('kk-KZ').format(context.raw) + ' мың ₸';
+                           }
+                       }
+                   }
+               },
+               scales: {
+                   y: {
+                       beginAtZero: true,
+                       ticks: {
+                           color: chartTextColor,
+                           callback: function(value) {
+                               return (value / 1000000) + ' M';
+                           }
+                       },
+                       grid: { color: 'rgba(156, 163, 175, 0.2)' }
+                   },
+                   x: {
+                       ticks: { color: chartTextColor },
+                       grid: { display: false }
+                   }
+               }
+           }
+       });
+
+   </script>
+</body>
+</html>
